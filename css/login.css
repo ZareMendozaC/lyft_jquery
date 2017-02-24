@@ -1,0 +1,45 @@
+*{
+       /*outline: 1px  solid red;*/
+}
+
+i.regresar{
+    float: left;
+    font-size: 30px;
+}
+p.texto{
+    margin-bottom: -16px;
+}
+
+.intl-tel-input.allow-dropdown input, .intl-tel-input.allow-dropdown input[type=text]{
+    padding-left: 90px;
+    padding-right: 30px;
+}
+
+.intl-tel-input .code-dial {
+    position: absolute;
+    top: 7px;
+    left: 50px;
+    z-index: 1;
+}
+.intl-tel-input .number-valid{
+    position: absolute;
+    z-index: 1;
+    right: 6px;
+    font-size: 20px;
+    top: 7px;
+}
+
+.intl-tel-input .number-valid.fa-times{
+    color: red;
+}
+
+.intl-tel-input .number-valid.fa-check{
+    color: green;
+}
+
+.btn-next{
+    background-color: #ff00bf;
+    color: white;
+    width: 100%;
+    margin-top: 50%;
+}

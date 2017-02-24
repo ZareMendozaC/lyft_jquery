@@ -1,0 +1,52 @@
+*{
+}
+
+.contacto{
+	font-size: 16px;
+    position: absolute;
+    top: 8px;
+    left: 25px;
+    z-index: 1;
+}
+.email{
+	font-size: 17px;
+    position: absolute;
+    top: 61px;
+    left: 25px;
+    z-index: 1;
+}
+input.inputName{
+	padding-left: 40px;
+}
+#nombre-valid{
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    font-size: 20px;
+    top: 7px;
+    color: green;
+}
+#nombre-invalid{
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    font-size: 20px;
+    top: 7px;
+    color: red;
+}
+#mail-valid{
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    font-size: 20px;
+    top: 60px;
+    color: green;
+}
+#mail-invalid{
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    font-size: 20px;
+    top: 60px;
+    color: red;
+}

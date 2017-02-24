@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="shortcut icon" href="image/favicon.png" type="image/png">-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CRoboto:300,400,500" media="all">
+    <link rel="stylesheet" href="utils/intl-tel-input/build/css/intlTelInput.css">
+    <link href="css/icomoon.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/queries.css" rel="stylesheet">
+
+    <link href="css/login.css" rel="stylesheet">
+    <link href="css/datos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-xs-12">
+                <h3 class="text-center">
+                    <i id="regresar" class="fa fa-angle-left regresar" aria-hidden="true"></i>
+                    Sign in
+                </h3>
+                <p class="text-center texto">Join now for free ride credit</p>
+                <hr >
+            </div>
+        </div>
+
+
+        <div class="row ">
+            <div col-xs-12>
+                <div class="form-group text-center">
+                    <div class="col-md-4 col-md-offset-4 col-xs-12">
+                        <span><i class="fa fa-user-o contacto" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control inputName" id="nombreApe" placeholder="First name    Last name" maxlength="30">
+                        <i id="nombre-valid" class="number-valid fa fa-check" style="display: none"></i>
+                         <i id="nombre-invalid" class="number-valid fa fa-times" style="display: none"></i>
+                        <br>
+                       <span><i class="fa fa-envelope-o email" aria-hidden="true"></i></span>
+                       <input type="email" class="form-control inputName" id="mail" placeholder="Email">
+                        <i id="mail-valid" class="number-valid fa fa-check" style="display: none"></i>
+                         <i id="mail-invalid" class="number-valid fa fa-times" style="display: none"></i>
+                       <div class="checkbox">
+                            <label>
+                            <input id="check" type="checkbox" value="">I Agree to Lyft's    Terms of service</label>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-xs-12 text-center">
+                <button id="next" class="btn btn-next" style="display: block"><h3>Next</h3></button>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="utils/intl-tel-input/build/js/intlTelInput.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/datos.js"></script>
+
+</html>

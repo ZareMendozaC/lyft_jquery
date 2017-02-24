@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lyft</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<link rel="shortcut icon" href="image/favicon.png" type="image/png">-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CRoboto:300,400,500" media="all">
+	<link href="css/icomoon.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/mapa.css" rel="stylesheet">
+	<link href="css/queries.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body onload="init()">
+	<div class="container-fluid">
+	<div class="row">
+		<div id="map">
+		</div>
+	</div>
+	<div class="row ">
+        <div class="col-xs-12 text-center">
+            <button id="pick" class="btn btn-next" style="display: none"><h3>Set Pickup</h3></button>
+        </div>
+    </div>	
+	</div>
+	  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFDpaBtu6nIiWrJ8P9pEzQ3-Ndbr3cenY&callback=initMap"
+        async defer></script>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/mapa.js"></script>
+</html>

@@ -1,0 +1,25 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.gm-style-mtc{
+	height:30px;
+}
+.gm-style-mtc span{
+	height:30px;
+}
+#map{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background-repeat:no-repeat;
+}
+.row button{
+	z-index: 1;
+	position: relative;
+	width: 100%;
+	background-color: #371a82;
+	color: white;
+}
