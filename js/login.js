@@ -5,16 +5,18 @@ function getObjectLocalStorage(key) {
     var value = localStorage.getItem(key);
     return JSON.parse(value);
 }
+function regresarIndex(){
+    window.location = "index.html";
+}
+$('#regresar').click(regresarIndex);
 
- $(document).ready(function() {
+$(document).ready(function() {
 
     String.prototype.replaceAll = function(str1, str2, ignore)
     {
         return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
     }
-    //$("#phone").intlTelInput();
      $('#phone-selector').intlTelInput({
-            //utilsScript: 'js/utils.js',
             autoPlaceholder: true,
             preferredCountries: ['us', 'pe'],
             customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
@@ -73,7 +75,3 @@ function getObjectLocalStorage(key) {
 
 });
 
-function regresarIndex(){
-    window.location = "index.html";
-}
-$('#regresar').click(regresarIndex);

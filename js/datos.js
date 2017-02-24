@@ -5,7 +5,6 @@ function getObjectLocalStorage(key) {
     var value = localStorage.getItem(key);
     return JSON.parse(value);
 }
-
 function regresarIndex(){
     window.location = "login.html";
 }
@@ -115,7 +114,6 @@ else
   else
   {
   var next= $("#next");
-  //next.prop( "disabled", true );
   }
 }
 $('#next').on('click',vistaMapa);
