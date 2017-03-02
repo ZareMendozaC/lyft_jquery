@@ -14,7 +14,6 @@ function isAlphabetic(cadena)
 {
       if (cadena.match(/^[a-zA-Z]+$/))
       {
-
         return true;
       }
       else

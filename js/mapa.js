@@ -1,3 +1,10 @@
+function setObjectLocalStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
+function getObjectLocalStorage(key) {
+    var value = localStorage.getItem(key);
+    return JSON.parse(value);
+}
 var miMapa;
 var latLongPazPeru={
     lat: -16.457389199999998,
@@ -45,9 +52,6 @@ function centrarMapa(position){
     });
 };
 
-function mostrarErrores(){
-
-}
 
 function init(){
     if(navigator.geolocation){
@@ -58,5 +62,27 @@ function init(){
     {
         console.log('Navigation NOT supported');
     }
+    $("#listaCarros li").mouseover(function(){
+            $(this).addClass("active");
+            $(this).addClass("morado");
+        });
+    $("#listaCarros li").mouseleave(function(){
+            $(this).removeClass("active");
+            $(this).removeClass("morado");
+    });
+    $("#listaCarros li").click(function(){
+            var direccion= $('#direccion').text();
+            var auto=  $(this).text();
+            setObjectLocalStorage('midireccion',direccion);
+            setObjectLocalStorage('auto',auto);
+        });
+      $("#pick").click(function(){
+        $('.dropup').css("display", "none");
+        $('#pick').css("display", "none");
+        $('#request').css("display", "block");
+        $('#info-auto').css("display", "block");
+        });
+    
 };
+
 

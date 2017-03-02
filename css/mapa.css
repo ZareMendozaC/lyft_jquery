@@ -42,6 +42,46 @@
 .carros{
 	margin-right: 10px;
 }
-.justificar{
-	
+i{
+	margin-top: 16px;
+}
+.direccion{
+	margin-left: 16px;
+	margin-top: 5px;
+}
+.icon-circle-down{
+	margin-top: 5px;
+	font-size: 20px;
+}
+li{
+	margin: 4px;
+}
+li.active {
+    background: #f3f3f5;
+
+}
+#listaCarros{
+	padding-right: 15px;
+    padding-left: 15px;
+}
+.morado{
+	color: #4e23bb;
+}
+#botonRequest{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+#request{
+	width: 100%;
+	background-color: #ff00bf;
+	color: white;
+	border-radius: 4px;
+	height: 50px;
+}
+.info-auto{
+	position: absolute;
+	bottom: 55px;
+	width: 100%;
+	background-color: #f3f3f5;
 }

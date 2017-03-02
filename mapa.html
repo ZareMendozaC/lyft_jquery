@@ -12,29 +12,48 @@
 	<link href="css/mapa.css" rel="stylesheet">
 	<link href="css/queries.css" rel="stylesheet">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="fonts/icon/style.css">
 </head>
 <body onload="init()">
 	<div class="container-fluid">
 	<div class="row">
 		<div id="map">
 		</div>
-		<div class="dropup info">
+		<div class="dropup info" style="display: block">
   			<button class="btn btn-default dropdown-toggle info-button" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   <span class="caret"></span>  ONG Paz Perú, Socabaya, Arequipa
-    		
-  			</button>
-  		<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-   		 	<li><p class="justificar"><i class="fa fa-car carros" aria-hidden="true"></i> Line</p><p class="justificar">Shared, 2 riders max</p></li>
-   		 	<li><p class="justificar"><i class="fa fa-car carros" aria-hidden="true"></i> Line</p><p class="justificar">Shared, 2 riders max</p></li>
-   		 	<li><p class="justificar"><i class="fa fa-car carros" aria-hidden="true"></i> Line</p><p class="justificar">Shared, 2 riders max</p></li>
-   		 	<li><p class="justificar"><i class="fa fa-car carros" aria-hidden="true"></i> Line</p><p class="justificar">Shared, 2 riders max</p></li>
+   			<span class=" pull-left icon-circle-down"></span> <p id="direccion" class="pull-left direccion"> Donde voy a ir!!!</p></button>
+  		<ul id="listaCarros" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+   		 	<li class="row"><div class="col-xs-2"><i class="fa fa-car carros text-center" aria-hidden="true"></i></div><div class="col-xs-7"><strong>Line</strong> <br> <p style="font-size: 10px">Shared, 2 riders max </p></div><div class="col-xs-2 text-center">3<br><p>min</p></div></li>
+   		 	<li class="row"><div class="col-xs-2"><i class="fa fa-car carros" aria-hidden="true"></i></div><div class="col-xs-7"><strong>Line</strong> <br> <p style="font-size: 10px" >Shared, 3 riders max </p></div><div class="col-xs-2 text-center">3<br><p>min</p></div></li>
+   		 	<li class="row"><div class="col-xs-2"><i class="fa fa-car carros" aria-hidden="true"></i></div><div class="col-xs-7"><strong>Line</strong> <br> <p style="font-size: 10px">Shared, 4 riders max </p></div><div class="col-xs-2 text-center">3<br><p>min</p></div></li> 	
   		</ul>
 		</div>
 
 		<div id="boton" class="text-center">
             <button id="pick" class="btn btn-next" style="display: block"><h4>Set Pickup</h4></button>
         </div>
-	</div>
+
+    <div id="info-auto" class="info-auto" style="display: none">
+    <div class="row">
+			<div class="col-xs-6"><i class="fa fa-car carros" aria-hidden="true"></i>
+			</div>
+			<div class="col-xs-6">lyft
+			</div>
+			</div>
+			<hr>
+			<div class="col-xs-6 text-center">personal
+			</div>
+    	<div class="col-xs-6 text-center">
+    	precio
+			</div>
+    </div>
+
+    <div id="botonRequest" class="text-center">
+            <button id="request" class="btn btn-next" style="display: none"><h4>Request Lyft</h4></button>
+        </div>
+		</div>
+		
+		</div>
 	</div>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
