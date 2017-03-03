@@ -85,3 +85,12 @@ li.active {
 	width: 100%;
 	background-color: #f3f3f5;
 }
+.imgCarro{
+	width: 40%;
+	margin-right: 10px;
+    margin-top: 16px;
+}
+.infoCosto{
+	margin-left: -18px;
+    margin-top: 8px;
+}

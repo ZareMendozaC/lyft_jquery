@@ -76,13 +76,22 @@ function init(){
             setObjectLocalStorage('midireccion',direccion);
             setObjectLocalStorage('auto',auto);
         });
-      $("#pick").click(function(){
+    $("#pick").click(function(){
         $('.dropup').css("display", "none");
         $('#pick').css("display", "none");
         $('#request').css("display", "block");
         $('#info-auto').css("display", "block");
         });
-    
-};
 
+     $.ajax({
+        url:'https://clientes.geekadvice.pe/api/carrera',
+        data: {tipo:'3'}
+        }).success(function(_data){console.log(_data)}).fail(function(){alert("error")});
+}
 
+//recibir
+/*
+ $.ajax({
+        url:'https://clientes.geekadvice.pe/api/carrera',
+        data: {tipo:'1'}
+        }).success(function(_data){console.log(_data)}).fail(function(){alert("error")});*/
