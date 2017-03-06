@@ -6,6 +6,7 @@ function getObjectLocalStorage(key) {
     return JSON.parse(value);
 }
 var miMapa;
+var directionsService = null;
 var latLongPazPeru={
     lat: -16.457389199999998,
     lng: -71.5315308
@@ -13,6 +14,8 @@ var latLongPazPeru={
 var opcionesMapa = {
     enableHighAccuracy: true
 }
+
+var destino = null;
 
 function initMap() {
     miMapa = new google.maps.Map(document.getElementById('map'), {
@@ -23,8 +26,11 @@ function initMap() {
         });
 };
 var miubicacion='nada';
+var currentMarker = null;
+var directionsDisplay = null;
+
 function geocodeLatLng(geocoder, position, id) {
-  
+
   var latlng = position;
   geocoder.geocode({'location': latlng}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
@@ -43,7 +49,7 @@ function geocodeLatLng(geocoder, position, id) {
 function centrarMapa(position){
     miMapa.setZoom(16);
     miMapa.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-    var marker = new google.maps.Marker({
+    currentMarker = new google.maps.Marker({
         position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
         map: miMapa,
         title:"Aqui estoy!!!",
@@ -69,15 +75,55 @@ function centrarMapa(position){
     });
 
     var geocoder = new google.maps.Geocoder;
-    geocodeLatLng(geocoder,marker.position,'direccion');
+    directionsService = new google.maps.DirectionsService();
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    geocodeLatLng(geocoder, currentMarker.position,'direccion');
 };
 
 function AnadirDestino(){
-    
+
     google.maps.event.addListener(miMapa, 'click', function( event ){
         var geocoder = new google.maps.Geocoder;
+
+        if(destino == null) {
+            destino =  new google.maps.Marker({
+                position: new google.maps.LatLng(event.latLng.lat(), event.latLng.lng()),
+                map: miMapa,
+                title:"Destino!!!",
+                icon: "img/persona.png"
+            });
+        } else {
+            changeMarkerPosition(destino, event.latLng.lat(), event.latLng.lng());
+        }
+
         geocodeLatLng(geocoder, new google.maps.LatLng(event.latLng.lat(), event.latLng.lng()), 'destino');
+        calcRoute(currentMarker.position, destino.position);
     });
+}
+
+function calcRoute(start, end) { //lat, long
+    var bounds = new google.maps.LatLngBounds();
+    //bounds.extend(start);
+   // bounds.extend(end);
+    miMapa.fitBounds(bounds);
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: google.maps.TravelMode.DRIVING
+    };
+    directionsService.route(request, function (response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+            directionsDisplay.setMap(miMapa);
+        } else {
+            alert("Direction Requested failed: " + status);
+        }
+    });
+}
+
+function changeMarkerPosition(marker, lat, long) {
+    var latlng = new google.maps.LatLng(lat, long);
+    marker.setPosition(latlng);
 }
 
 function init(){
