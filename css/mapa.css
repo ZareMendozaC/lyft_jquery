@@ -46,9 +46,10 @@ i{
 	margin-top: 16px;
 }
 .direccion{
-	margin-left: 16px;
-	margin-top: 5px;
+	margin-left: 24px;
+	margin-bottom: 0px;	
 }
+
 .icon-circle-down{
 	margin-top: 5px;
 	font-size: 20px;
@@ -84,4 +85,13 @@ li.active {
 	bottom: 55px;
 	width: 100%;
 	background-color: #f3f3f5;
+}
+.imgCarro{
+	width: 40%;
+	margin-right: 10px;
+    margin-top: 16px;
+}
+.infoCosto{
+	margin-left: -18px;
+    margin-top: 8px;
 }
