@@ -42,7 +42,6 @@
 				<div class="infoCosto"><p>Lyft</p><p style="font-size: 10px">Fast ride 4 seats</p>
 				</div>
 			</div>
-			
 			<hr>
 			<div class="col-xs-6 text-center">personal
 			</div>
@@ -51,9 +50,15 @@
 		</div>
 		</div>
 		<div class="row siguiente">
-    	<div class="col-xs-12">
-    		<p id="midireccion">Origen</p>
-    		<p id="destino">Destino</p>
+    	<div class="col-xs-12" id="ruta">
+    		<ul style="list-style:none;">
+    			<li><i class="fa fa-circle iconTam puntito morado" aria-hidden="true"></i><p id="midireccion">Origen</p></li>
+    			<hr style="border-left: 1px solid #999999;
+    height: 43px;
+    margin-left: 20px;">
+    			<hr class="lineaSiguiente">
+    			<li><i class="fa fa-circle iconTam puntito fucsia" aria-hidden="true"></i><p id="destino">Destino</p></li>
+    		</ul>	
 		</div>
 		</div>
     </div>

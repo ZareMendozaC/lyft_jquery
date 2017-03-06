@@ -95,7 +95,6 @@ function AnadirDestino(){
         } else {
             changeMarkerPosition(destino, event.latLng.lat(), event.latLng.lng());
         }
-
         geocodeLatLng(geocoder, new google.maps.LatLng(event.latLng.lat(), event.latLng.lng()), 'destino');
         calcRoute(currentMarker.position, destino.position);
     });

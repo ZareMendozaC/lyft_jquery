@@ -103,3 +103,27 @@ hr{
 .siguiente{
 	background-color: white;
 }
+#midireccion{
+	margin: -20px 35px 0px;
+}
+#destino{
+	margin: -20px 35px 0px;
+}
+.puntito{
+	margin-left: 12px;
+}
+.lineaSiguiente{
+    width: 320px;
+    margin-left: 37px;
+    margin-top: 15px !important;
+    margin-bottom: 0px !important;
+}
+.morado{
+	color: #362387;
+}
+.fucsia{
+	color: #ff1dc1;
+}
+.fa-circle:before{
+	font-size: 12px;
+}
