@@ -95,3 +95,11 @@ li.active {
 	margin-left: -18px;
     margin-top: 8px;
 }
+hr{
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	color: white !important;
+}
+.siguiente{
+	background-color: white;
+}

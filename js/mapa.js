@@ -22,7 +22,7 @@ function initMap() {
             zoom: 16
         });
 };
-
+var miubicacion='nada';
 function geocodeLatLng(geocoder, position, id) {
   
   var latlng = position;
@@ -30,6 +30,7 @@ function geocodeLatLng(geocoder, position, id) {
     if (status === google.maps.GeocoderStatus.OK) {
       if (results[0]) {
         $('#'+id).html(results[0].formatted_address);
+        miubicacion= results[0].formatted_address;
       } else {
         window.alert('No results found');
       }
@@ -71,21 +72,17 @@ function centrarMapa(position){
     geocodeLatLng(geocoder,marker.position,'direccion');
 };
 
-setTimeout(function(){
+function AnadirDestino(){
     
     google.maps.event.addListener(miMapa, 'click', function( event ){
         var geocoder = new google.maps.Geocoder;
         geocodeLatLng(geocoder, new google.maps.LatLng(event.latLng.lat(), event.latLng.lng()), 'destino');
     });
-
-}, 2000);
-
-
+}
 
 function init(){
     if(navigator.geolocation){
         console.log('Navigation supported');
-        // navigator.geolocation.watchPosition(centrarMapa);
         navigator.geolocation.getCurrentPosition(centrarMapa);
     }
     else
@@ -111,6 +108,8 @@ function init(){
         $('#pick').css("display", "none");
         $('#request').css("display", "block");
         $('#info-auto').css("display", "block");
+        $('#midireccion').html(miubicacion);
+        AnadirDestino();
         });
 
      $.ajax({
