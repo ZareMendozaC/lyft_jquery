@@ -56,6 +56,7 @@ i{
 }
 li{
 	margin: 4px;
+	margin-bottom: 18px;
 }
 li.active {
     background: #f3f3f5;
@@ -95,10 +96,9 @@ li.active {
 	margin-left: -18px;
     margin-top: 8px;
 }
-hr{
-	margin-top: 0px !important;
-	margin-bottom: 0px !important;
-	color: white !important;
+#linea{
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
 }
 .siguiente{
 	background-color: white;
@@ -113,8 +113,6 @@ hr{
 	margin-left: 12px;
 }
 .lineaSiguiente{
-    width: 320px;
-    margin-left: 37px;
     margin-top: 15px !important;
     margin-bottom: 0px !important;
 }
@@ -126,4 +124,7 @@ hr{
 }
 .fa-circle:before{
 	font-size: 12px;
+}
+#minMax{
+	margin-bottom: 2px;
 }

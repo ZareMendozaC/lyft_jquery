@@ -25,8 +25,9 @@
    			<p id="direccion" class="pull-left direccion"></p></button>
   		<ul id="listaCarros" class="dropdown-menu" aria-labelledby="dropdownMenu2">
    		 	<li class="row"><div class="col-xs-2"><i class="fa fa-car carros text-center" aria-hidden="true"></i></div><div class="col-xs-7"><strong>Line</strong> <br> <p style="font-size: 10px">Shared, 2 riders max </p></div><div class="col-xs-2 text-center">3<br><p>min</p></div></li>
-   		 	<li class="row"><div class="col-xs-2"><i class="fa fa-car carros" aria-hidden="true"></i></div><div class="col-xs-7"><strong>Line</strong> <br> <p style="font-size: 10px" >Shared, 3 riders max </p></div><div class="col-xs-2 text-center">3<br><p>min</p></div></li>
-   		 	<li class="row"><div class="col-xs-2"><i class="fa fa-car carros" aria-hidden="true"></i></div><div class="col-xs-7"><strong>Line</strong> <br> <p style="font-size: 10px">Shared, 4 riders max </p></div><div class="col-xs-2 text-center">3<br><p>min</p></div></li> 	
+   		 	<li class="row"><div class="col-xs-2"><i class="fa fa-car carros" aria-hidden="true"></i></div><div class="col-xs-7"><strong>Lyft</strong> <br> <p style="font-size: 10px" >Shared, 3 riders max </p></div><div class="col-xs-2 text-center">3<br><p>min</p></div></li>
+   		 	<li class="row"><div class="col-xs-2"><i class="fa fa-car carros" aria-hidden="true"></i></div><div class="col-xs-7"><strong>Plus</strong> <br> <p style="font-size: 10px">Shared, 4 riders max </p></div><div class="col-xs-2 text-center">3<br><p>min</p></div></li>
+   		 	<li class="row"><div class="col-xs-2"><i class="fa fa-car carros" aria-hidden="true"></i></div><div class="col-xs-7"><strong>Premier</strong> <br> <p style="font-size: 10px">Shared, 4 riders max </p></div><div class="col-xs-2 text-center">3<br><p>min</p></div></li> 	
   		</ul>
 		</div>
 
@@ -39,23 +40,23 @@
 			<img class="imgCarro pull-right" src="img/car.png">
 			</div>
 			<div class="col-xs-6">
-				<div class="infoCosto"><p>Lyft</p><p style="font-size: 10px">Fast ride 4 seats</p>
+				<div class="infoCosto"><p>Lyft</p><p style="font-size: 10px; color: #bcc2cd">Fast ride 4 seats</p>
 				</div>
 			</div>
-			<hr>
-			<div class="col-xs-6 text-center">personal
+			<div class="col-xs-12"><hr id="linea"></div>
+			<div class="col-xs-6 text-center">
+			<img class="text-center" src="img/tarjeta.png" style="width: 20%"> Personal
+			<p style="font-size: 11px; color: #bcc2cd">Payment</p>
 			</div>
     	<div class="col-xs-6 text-center">
-    	precio
+    		<p id="minMax">$ 0 - 0</p>
+    		<p style="font-size: 11px; color: #bcc2cd">Price stimated</p>
 		</div>
 		</div>
 		<div class="row siguiente">
     	<div class="col-xs-12" id="ruta">
     		<ul style="list-style:none;">
     			<li><i class="fa fa-circle iconTam puntito morado" aria-hidden="true"></i><p id="midireccion">Origen</p></li>
-    			<hr style="border-left: 1px solid #999999;
-    height: 43px;
-    margin-left: 20px;">
     			<hr class="lineaSiguiente">
     			<li><i class="fa fa-circle iconTam puntito fucsia" aria-hidden="true"></i><p id="destino">Destino</p></li>
     		</ul>	

@@ -124,7 +124,7 @@ function changeMarkerPosition(marker, lat, long) {
     var latlng = new google.maps.LatLng(lat, long);
     marker.setPosition(latlng);
 }
-
+var escogiTipo= false;
 function init(){
     if(navigator.geolocation){
         console.log('Navigation supported');
@@ -144,28 +144,74 @@ function init(){
     });
     $("#listaCarros li").click(function(){
             var direccion= $('#direccion').text();
-            var auto=  $(this).text();
+            var auto=  $(this).find('strong').text();
+            if(auto=='Line')
+            {
+              setObjectLocalStorage('tipo','1');
+              setObjectLocalStorage('auto',auto);
+              escogiTipo= true;
+            }
+            if(auto=='Lyft')
+            {
+              setObjectLocalStorage('tipo','2'); 
+              setObjectLocalStorage('auto',auto); 
+              escogiTipo= true; 
+            }
+            if(auto=='Plus')
+            {
+              setObjectLocalStorage('tipo','3');  
+              setObjectLocalStorage('auto',auto); 
+              escogiTipo= true;
+            }
+            if(auto=='Premier')
+            {
+              setObjectLocalStorage('tipo','4');
+              setObjectLocalStorage('auto',auto);
+              escogiTipo= true;   
+            }
             setObjectLocalStorage('midireccion',direccion);
-            setObjectLocalStorage('auto',auto);
         });
     $("#pick").click(function(){
-        $('.dropup').css("display", "none");
-        $('#pick').css("display", "none");
-        $('#request').css("display", "block");
-        $('#info-auto').css("display", "block");
-        $('#midireccion').html(miubicacion);
-        AnadirDestino();
+        if (escogiTipo==false) {
+            alert("escoge por favor un tipo de vehículo");
+        }
+        else{
+            $('.dropup').css("display", "none");
+            $('#pick').css("display", "none");
+            $('#request').css("display", "block");
+            $('#info-auto').css("display", "block");
+            $('#midireccion').html(miubicacion);
+            AnadirDestino();
+            solicitarEstimado();
+        }
         });
-
+    $("#request").click(function(){
+       
+    });
+/*
      $.ajax({
         url:'https://clientes.geekadvice.pe/api/carrera',
         data: {tipo:'3'}
         }).success(function(_data){console.log(_data)}).fail(function(){alert("error")});
+        */
 }
 
-//recibir
-/*
- $.ajax({
-        url:'https://clientes.geekadvice.pe/api/carrera',
-        data: {tipo:'1'}
-        }).success(function(_data){console.log(_data)}).fail(function(){alert("error")});*/
+function solicitarEstimado(){
+     $.ajax({
+        url: 'https://clientes.geekadvice.pe/api/estimado',
+        data: {
+            tipo: getObjectLocalStorage('tipo')
+        }
+    }).success(
+    function(_data){
+            update(_data);
+    }
+    
+    );
+}
+function update(_info){
+    var min= _info.estimado.min;
+    var max= _info.estimado.max;
+    var precio= '$ '+min+' - '+max;
+    $('#minMax').html(precio);
+}
