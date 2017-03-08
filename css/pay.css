@@ -1,0 +1,60 @@
+header {
+   
+    text-align: center;
+}
+
+.lista-menu{
+    padding-left: 0;
+}
+
+.lista-menu li{
+    font-size:18px;
+    list-style: none;
+    display: inline-block;
+    padding-top: 15px;
+}
+
+#circle{
+    margin-left: 10px;
+}
+
+#left {
+    float: left;
+  }
+
+#raya{
+    padding: 0;
+    margin: 0;
+}
+
+.foto {
+    width: 150px;
+    height: 150px; 
+    background-image: url(../img/foto.png);
+    background-position: center;
+    background-size: 100%;
+    margin: 0 auto;
+    border-radius: 200px;
+}
+
+.contenedor {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#interface {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+#nextdos {
+	background-color: #474c62;
+	border-color: #474c62;
+	color: white; 
+}
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: white;
+    background-color: #ff00bf;
+    border-color: #ff00bf;
+}

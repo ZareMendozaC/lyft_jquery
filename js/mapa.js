@@ -186,16 +186,30 @@ function init(){
         }
         });
     $("#request").click(function(){
-       
+        var midestino= $('#destino').text();
+        if(midestino=='Destino')
+            {
+                alert("Señala tu destino en el mapa");
+            }
+            else
+                {
+            //window.location= "pay.html";
+            solicitarCarrera();
+       }
     });
-/*
-     $.ajax({
-        url:'https://clientes.geekadvice.pe/api/carrera',
-        data: {tipo:'3'}
-        }).success(function(_data){console.log(_data)}).fail(function(){alert("error")});
-        */
 }
-
+function solicitarCarrera(){
+     $.ajax({
+        url: 'https://clientes.geekadvice.pe/api/carrera',
+        data: {
+            tipo: getObjectLocalStorage('tipo')
+        }
+    }).success(
+    function(_data){
+        updateCarrera(_data);
+    }
+    );
+}
 function solicitarEstimado(){
      $.ajax({
         url: 'https://clientes.geekadvice.pe/api/estimado',
@@ -206,12 +220,23 @@ function solicitarEstimado(){
     function(_data){
             update(_data);
     }
-    
     );
 }
 function update(_info){
     var min= _info.estimado.min;
     var max= _info.estimado.max;
+    var tipo= getObjectLocalStorage('auto');
     var precio= '$ '+min+' - '+max;
     $('#minMax').html(precio);
+    $('#tipoElegido').html(tipo);
+}
+function updateCarrera(_info){
+    var moneda= _info.estimado.moneda;
+    var final= _info.final;
+    var chofer= _info.conductor.name;
+    var foto= _info.url;
+    console.log(moneda);
+    console.log(final);
+    console.log(chofer);
+    console.log(foto);
 }
