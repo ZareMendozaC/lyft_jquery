@@ -234,9 +234,10 @@ function updateCarrera(_info){
     var moneda= _info.estimado.moneda;
     var final= _info.final;
     var chofer= _info.conductor.name;
-    var foto= _info.url;
-    console.log(moneda);
-    console.log(final);
-    console.log(chofer);
-    console.log(foto);
+    var foto= _info.conductor.url;
+    setObjectLocalStorage('moneda',moneda);
+    setObjectLocalStorage('final',final);
+    setObjectLocalStorage('chofer',chofer);
+    setObjectLocalStorage('url',foto);
+    window.location= "pay.html"
 }
