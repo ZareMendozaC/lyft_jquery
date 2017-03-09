@@ -225,6 +225,7 @@ function solicitarEstimado(){
 function update(_info){
     var min= _info.estimado.min;
     var max= _info.estimado.max;
+    setObjectLocalStorage('maximo',max);
     var tipo= getObjectLocalStorage('auto');
     var precio= '$ '+min+' - '+max;
     $('#minMax').html(precio);

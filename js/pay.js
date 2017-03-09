@@ -9,7 +9,9 @@ function init()
 {
 	var url=getObjectLocalStorage('url');
 	var chofer= getObjectLocalStorage('chofer');
-	var final = getObjectLocalStorage('final');
+	var precioFinal= getObjectLocalStorage('maximo');
+	var precio= '$ '+precioFinal;
 	$('#foto').css("background-image", "url("+url+")");
 	$('#chofer').html(chofer);
+	$('#precioFinal').html(precio);
 }
